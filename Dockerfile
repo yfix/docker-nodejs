@@ -8,20 +8,23 @@ ENV NODE_VERSION 5.7.0
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
-  && apt-get update && apt-get install -y -q --no-install-recommends \
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+#  && apt-get update && apt-get install -y -q --no-install-recommends \
+RUN apt-get update && apt-get install -y -q --no-install-recommends \
     apt-transport-https \
     build-essential \
     ca-certificates \
     curl \
-    g++ \
-    gcc \
-    git \
-    make \
-    sudo \
     wget \
+    git \
+#    sudo \
+#    g++ \
+#    gcc \
+#    git \
+#    make \
   \
-  && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
+  && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash \
   && source $NVM_DIR/nvm.sh \
   && nvm install $NODE_VERSION \
   && nvm alias default $NODE_VERSION \

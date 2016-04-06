@@ -1,0 +1,9 @@
+nodejs:
+  build: .
+#  image: yfix/nodejs
+  container_name: yfix_nodejs
+  ports:
+    - 30083:8080
+  restart: always
+#  volumes:
+#    - .:/app
