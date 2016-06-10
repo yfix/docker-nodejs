@@ -18,11 +18,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
     curl \
     wget \
     git \
-#    sudo \
-#    g++ \
-#    gcc \
-#    git \
-#    make \
   \
   && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash \
   && source $NVM_DIR/nvm.sh \
@@ -37,10 +32,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
   && rm -rf /var/lib/apt/lists/* \
   \
   && echo "== the end =="
-
-#  && mkdir -p $APP_PATH \
-#  && cd $APP_PATH \
-#  && npm install --production \
 
 WORKDIR $APP_PATH
 
