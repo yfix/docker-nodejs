@@ -25,7 +25,9 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
   && nvm alias default $NODE_VERSION \
   && nvm use default \
   \
-  && npm install -g pm2 \
+  && npm install -g \
+        pm2 \
+        nodemon \ 
   \
   && apt-get autoremove -y \
   && apt-get clean -y \
