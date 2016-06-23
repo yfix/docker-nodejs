@@ -1,5 +1,7 @@
 FROM yfix/baseimage
 
+MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
+
 ENV APP_VERSION 0.0.1
 ENV APP_PATH /app
 ENV NPM_CONFIG_LOGLEVEL info
