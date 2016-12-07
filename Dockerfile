@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
   \
   && npm install -g \
         pm2 \
+        pm2-zabbix \
         nodemon \ 
   \
   && apt-get autoremove -y \
