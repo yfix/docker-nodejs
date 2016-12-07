@@ -6,13 +6,12 @@ ENV APP_VERSION 0.0.1
 ENV APP_PATH /app
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 6.9.2
+ENV NODE_VERSION 7.2.1
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-#  && apt-get update && apt-get install -y -q --no-install-recommends \
 RUN apt-get update && apt-get install -y -q --no-install-recommends \
     apt-transport-https \
     build-essential \
