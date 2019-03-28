@@ -1,4 +1,4 @@
-FROM yfix/baseimage
+FROM yfix/baseimage:18.04
 
 MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
@@ -6,7 +6,7 @@ ENV APP_VERSION 0.0.1
 ENV APP_PATH /app
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 8.5.0
+ENV NODE_VERSION 10.15.3
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
-ENV YARN_VERSION 1.0.1
+ENV YARN_VERSION 1.15.2
 
 RUN mkdir -p /opt/yarn \
   && curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
